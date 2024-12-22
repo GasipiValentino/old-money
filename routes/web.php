@@ -5,6 +5,8 @@ use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\MercadoPagoController;
+use App\Http\Controllers\FavoritesController;
+
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, "home"])
@@ -143,3 +145,13 @@ Route::get('/mercadopago/success', [MercadoPagoController::class, 'successProces
   ->name('mercadopago.successProcess');
 
   
+// Rutas favoritos
+
+Route::get('favorites', [FavoritesController::class, 'viewFavorites'])
+  ->name('favorites.view');
+
+Route::post('favorites/add/{id}', [FavoritesController::class, 'addToFavorites'])
+  ->name('favorites.add');
+
+Route::delete('favorites/remove/{id}', [FavoritesController::class, 'removeFromFavorites'])
+  ->name('favorites.remove');
