@@ -84,7 +84,7 @@
 
         
         @foreach($products as $product)
-    <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-zinc-700 max-w-[300px]">
+    <div class="rounded-lg border border-gray-200 bg-white hover:bg-zinc-50 p-6 shadow-sm dark:border-gray-700 dark:bg-zinc-700 dark:hover:bg-zinc-600 max-w-[300px]">
         <div class="h-56 w-full">
           <a href="{{ route('products.view', ['id' => $product->product_id]) }}">
             @if ($product->cover)
