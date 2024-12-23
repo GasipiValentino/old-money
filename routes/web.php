@@ -5,7 +5,6 @@ use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\MercadoPagoController;
-use App\Http\Controllers\FavoritesController;
 
 
 
@@ -143,15 +142,3 @@ Route::put('/admin/update-role/{id}', [AdminController::class, 'updateRole'])->n
 
 Route::get('/mercadopago/success', [MercadoPagoController::class, 'successProcess'])
   ->name('mercadopago.successProcess');
-
-  
-// Rutas favoritos
-
-Route::get('favorites', [FavoritesController::class, 'viewFavorites'])
-  ->name('favorites.view');
-
-Route::post('favorites/add/{id}', [FavoritesController::class, 'addToFavorites'])
-  ->name('favorites.add');
-
-Route::delete('favorites/remove/{id}', [FavoritesController::class, 'removeFromFavorites'])
-  ->name('favorites.remove');
